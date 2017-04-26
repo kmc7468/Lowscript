@@ -14,4 +14,9 @@
       <Filter>Header-Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Command.cc">
+      <Filter>Source-Files</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>
