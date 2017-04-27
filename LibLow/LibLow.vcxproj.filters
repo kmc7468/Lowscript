@@ -37,6 +37,12 @@
     <ClInclude Include="LibLow\Interpreter.hh">
       <Filter>Header-Files</Filter>
     </ClInclude>
+    <ClInclude Include="LibLow\Script.hh">
+      <Filter>Header-Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LibLow\Parser.hh">
+      <Filter>Header-Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Command.cc">

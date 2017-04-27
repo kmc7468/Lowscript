@@ -123,6 +123,8 @@
     <ClInclude Include="LibLow\Command.hh" />
     <ClInclude Include="LibLow\Interpreter.hh" />
     <ClInclude Include="LibLow\Object.hh" />
+    <ClInclude Include="LibLow\Parser.hh" />
+    <ClInclude Include="LibLow\Script.hh" />
     <ClInclude Include="LibLow\Types\Bool.hh" />
     <ClInclude Include="LibLow\Types\Double.hh" />
     <ClInclude Include="LibLow\Types\Int.hh" />

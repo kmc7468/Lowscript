@@ -9,6 +9,8 @@
 #include "LibLow/Command.hh"
 #include "LibLow/Interpreter.hh"
 #include "LibLow/Object.hh"
+#include "LibLow/Parser.hh"
+#include "LibLow/Script.hh"
 #include "LibLow/Variable.hh"
 
 #include "LibLow/Types/Bool.hh"
