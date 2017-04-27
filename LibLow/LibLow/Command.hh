@@ -48,6 +48,7 @@ namespace LibLow
 
 			case Var:
 			case Con:
+			case Mov:
 				return 2;
 
 			default:
@@ -67,6 +68,7 @@ namespace LibLow
 			"con",
 			"push",
 			"pop",
+			"mov",
 		};
 		static constexpr const std::size_t TypeLength[] =
 		{
@@ -75,6 +77,7 @@ namespace LibLow
 			3, // con
 			4, // push
 			3, // pop
+			3, // mov
 		};
 
 	private:
