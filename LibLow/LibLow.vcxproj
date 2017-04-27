@@ -121,6 +121,7 @@
   <ItemGroup>
     <ClInclude Include="LibLow.hh" />
     <ClInclude Include="LibLow\Command.hh" />
+    <ClInclude Include="LibLow\Interpreter.hh" />
     <ClInclude Include="LibLow\Object.hh" />
     <ClInclude Include="LibLow\Types\Bool.hh" />
     <ClInclude Include="LibLow\Types\Double.hh" />
@@ -129,6 +130,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Command.cc" />
+    <ClCompile Include="Interpreter.cc" />
     <ClCompile Include="Object.cc" />
     <ClCompile Include="Types\Bool.cc" />
     <ClCompile Include="Types\Double.cc" />
