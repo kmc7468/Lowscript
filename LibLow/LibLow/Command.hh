@@ -1,6 +1,7 @@
 #ifndef LIBLOW_HEADER_COMMAND_HH
 #define LIBLOW_HEADER_COMMAND_HH
 
+#include <cstddef>
 #include <string>
 #include <vector>
 
@@ -30,6 +31,27 @@ namespace LibLow
 		Command& operator=(Command&& command) noexcept;
 		bool operator==(const Command& command) const;
 		bool operator!=(const Command& command) const;
+
+	public:
+		static constexpr std::size_t ArgumentSize(const Type& command) noexcept
+		{
+			switch (command)
+			{
+			case Nop:
+				return 0;
+
+			case Push:
+			case Pop:
+				return 1;
+
+			case Var:
+			case Con:
+				return 2;
+
+			default:
+				return -1;
+			}
+		}
 
 	public:
 		Type CmdType() const;

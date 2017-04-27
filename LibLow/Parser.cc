@@ -81,7 +81,7 @@ namespace LibLow
 			else if (is_str)
 			{
 				temp += c;
-				if (c == '\'')
+				if (c == '\"')
 				{
 					is_str = false;
 				}
@@ -114,36 +114,8 @@ namespace LibLow
 		arguments.push_back(temp);
 		temp.clear();
 
-		switch (cmd_type)
-		{
-		case Command::Var:
-		{
-			if (arguments.size() != 2)
-				throw "The argument to the command is invalid.";
-			break;
-		}
-
-		case Command::Con:
-		{
-			if (arguments.size() != 2)
-				throw "The argument to the command is invalid.";
-			break;
-		}
-
-		case Command::Push:
-		{
-			if (arguments.size() != 1)
-				throw "The argument to the command is invalid.";
-			break;
-		}
-
-		case Command::Pop:
-		{
-			if (arguments.size() != 1)
-				throw "The argument to the command is invalid.";
-			break;
-		}
-		}
+		if (Command::ArgumentSize(cmd_type) != arguments.size())
+			throw "The argument to the command is invalid.";
 
 		return Command(cmd_type, arguments);
 	}
