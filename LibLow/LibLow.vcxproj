@@ -121,9 +121,11 @@
   <ItemGroup>
     <ClInclude Include="LibLow.hh" />
     <ClInclude Include="LibLow\Command.hh" />
+    <ClInclude Include="LibLow\Object.hh" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Command.cc" />
+    <ClCompile Include="Object.cc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

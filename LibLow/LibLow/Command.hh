@@ -11,7 +11,12 @@ namespace LibLow
 	public:
 		enum Type
 		{
-			Nop = 0,
+			Nop,
+
+			Var,
+			Con,
+			Push,
+			Pop,
 		};
 
 	public:
