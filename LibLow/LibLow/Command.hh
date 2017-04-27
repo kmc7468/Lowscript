@@ -18,6 +18,8 @@ namespace LibLow
 			Con,
 			Push,
 			Pop,
+
+			Mov,
 		};
 
 	public:

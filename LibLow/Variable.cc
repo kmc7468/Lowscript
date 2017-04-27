@@ -6,11 +6,11 @@
 
 namespace LibLow
 {
-	Variable::Variable(const Type& type)
-		: Variable(type, TypeOption::None)
+	Variable::Variable(const std::string& name, const Type& type)
+		: Variable(name, type, TypeOption::None)
 	{}
-	Variable::Variable(const Type& type, const LibLow::TypeOption& type_option)
-		: TypeOption_(type_option)
+	Variable::Variable(const std::string& name, const Type& type, const LibLow::TypeOption& type_option)
+		: Name_(name), TypeOption_(type_option)
 	{
 		switch (type)
 		{
@@ -48,5 +48,9 @@ namespace LibLow
 	TypeOption Variable::TypeOption() const noexcept
 	{
 		return TypeOption_;
+	}
+	std::string Variable::Name() const
+	{
+		return Name_;
 	}
 }
