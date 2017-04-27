@@ -7,7 +7,6 @@
 #define LIBLOW_VER_STRING "1.0.0"
 
 #include "LibLow/Command.hh"
-#include "LibLow/Interpreter.hh"
 #include "LibLow/Object.hh"
 #include "LibLow/Parser.hh"
 #include "LibLow/Script.hh"
