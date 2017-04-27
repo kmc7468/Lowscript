@@ -56,26 +56,20 @@ namespace LibLow
 		if (line.length() == cmd_len)
 			throw "The argument to the command is invalid.";
 
-		bool is_char = false, is_str = false;
+		char arg_char_str = '\0';
 		std::string temp;
 
 		for (char c : line.substr(cmd_len + 1))
 		{
-			if (is_char)
+			if (arg_char_str != '\0')
 			{
 				temp += c;
-				if (c == '\'')
+				if (c == arg_char_str)
 				{
-					is_char = false;
+					c = '\0';
 				}
-			}
-			else if (is_str)
-			{
-				temp += c;
-				if (c == '\"')
-				{
-					is_str = false;
-				}
+
+				break;
 			}
 			else
 			{
@@ -85,13 +79,9 @@ namespace LibLow
 				}
 
 				temp += c;
-				if (c == '\"')
+				if (c == '\"' || c == '\'')
 				{
-					is_str = true;
-				}
-				else if (c == '\'')
-				{
-					is_char = true;
+					arg_char_str = c;
 				}
 				else if (c == ',')
 				{
