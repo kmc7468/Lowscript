@@ -30,6 +30,7 @@ namespace LibLow
 
 	enum class TypeOption
 	{
+		None = 0,
 		Const = 1,
 	};
 

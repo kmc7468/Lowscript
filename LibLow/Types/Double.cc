@@ -35,6 +35,15 @@ namespace LibLow
 			return Value_ != object.Value_;
 		}
 
+		std::shared_ptr<Double> Double::Create()
+		{
+			return std::make_shared<Double>();
+		}
+		std::shared_ptr<Double> Double::Create(const double& value)
+		{
+			return std::make_shared<Double>(value);
+		}
+
 		Type Double::Type() const noexcept
 		{
 			return Type::Double;

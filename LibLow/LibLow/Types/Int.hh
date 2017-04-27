@@ -4,6 +4,7 @@
 #include "../Object.hh"
 
 #include <cstdint>
+#include <memory>
 
 namespace LibLow
 {
@@ -23,6 +24,10 @@ namespace LibLow
 			Int& operator=(Int&& object) noexcept;
 			bool operator==(const Int& object) const noexcept;
 			bool operator!=(const Int& object) const noexcept;
+
+		public:
+			static std::shared_ptr<Int> Create();
+			static std::shared_ptr<Int> Create(const std::int32_t& value);
 			
 		public:
 			virtual LibLow::Type Type() const noexcept override;

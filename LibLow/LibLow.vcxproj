@@ -125,6 +125,7 @@
     <ClInclude Include="LibLow\Types\Bool.hh" />
     <ClInclude Include="LibLow\Types\Double.hh" />
     <ClInclude Include="LibLow\Types\Int.hh" />
+    <ClInclude Include="LibLow\Variable.hh" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Command.cc" />
@@ -132,6 +133,7 @@
     <ClCompile Include="Types\Bool.cc" />
     <ClCompile Include="Types\Double.cc" />
     <ClCompile Include="Types\Int.cc" />
+    <ClCompile Include="Variable.cc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

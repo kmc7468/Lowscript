@@ -3,6 +3,8 @@
 
 #include "../Object.hh"
 
+#include <memory>
+
 namespace LibLow
 {
 	namespace Types
@@ -21,6 +23,10 @@ namespace LibLow
 			Double& operator=(Double&& object) noexcept;
 			bool operator==(const Double& object) const noexcept;
 			bool operator!=(const Double& object) const noexcept;
+
+		public:
+			static std::shared_ptr<Double> Create();
+			static std::shared_ptr<Double> Create(const double& value);
 
 		public:
 			virtual LibLow::Type Type() const noexcept override;

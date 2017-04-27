@@ -35,6 +35,15 @@ namespace LibLow
 			return Value_ != object.Value_;
 		}
 
+		std::shared_ptr<Int> Int::Create()
+		{
+			return std::make_shared<Int>();
+		}
+		std::shared_ptr<Int> Int::Create(const std::int32_t& value)
+		{
+			return std::make_shared<Int>(value);
+		}
+
 		Type Int::Type() const noexcept
 		{
 			return Type::Int;

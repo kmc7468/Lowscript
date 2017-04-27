@@ -35,6 +35,15 @@ namespace LibLow
 			return Value_ != object.Value_;
 		}
 
+		std::shared_ptr<Bool> Bool::Create()
+		{
+			return std::make_shared<Bool>();
+		}
+		std::shared_ptr<Bool> Bool::Create(const bool& value)
+		{
+			return std::make_shared<Bool>(value);
+		}
+
 		Type Bool::Type() const noexcept
 		{
 			return Type::Bool;
