@@ -1,8 +1,12 @@
 #ifndef LIBLOW_HEADER_PARSER_HH
 #define LIBLOW_HEADER_PARSER_HH
 
+#include <string>
+
 namespace LibLow
 {
+	class Command;
+
 	class Parser final
 	{
 	public:
@@ -18,7 +22,7 @@ namespace LibLow
 		bool operator!=(const Parser& parser) const noexcept = delete;
 
 	public:
-
+		static Command ParseLine(std::string line);
 	};
 }
 

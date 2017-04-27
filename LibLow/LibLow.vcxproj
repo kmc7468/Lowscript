@@ -134,6 +134,8 @@
     <ClCompile Include="Command.cc" />
     <ClCompile Include="Interpreter.cc" />
     <ClCompile Include="Object.cc" />
+    <ClCompile Include="Parser.cc" />
+    <ClCompile Include="Script.cc" />
     <ClCompile Include="Types\Bool.cc" />
     <ClCompile Include="Types\Double.cc" />
     <ClCompile Include="Types\Int.cc" />

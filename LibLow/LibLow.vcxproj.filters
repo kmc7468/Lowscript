@@ -66,5 +66,11 @@
     <ClCompile Include="Interpreter.cc">
       <Filter>Source-Files</Filter>
     </ClCompile>
+    <ClCompile Include="Script.cc">
+      <Filter>Source-Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser.cc">
+      <Filter>Source-Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
