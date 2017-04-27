@@ -1,6 +1,7 @@
 #ifndef LIBLOW_HEADER_INTERPRETER_HH
 #define LIBLOW_HEADER_INTERPRETER_HH
 
+#include "Script.hh"
 #include "Variable.hh"
 
 #include <memory>
@@ -14,7 +15,7 @@ namespace LibLow
 		using Ptr = std::shared_ptr<Interpreter>;
 
 	public:
-		Interpreter() = default;
+		Interpreter(const Script::Ptr& script);
 		Interpreter(const Interpreter& interpreter) = delete;
 		Interpreter(Interpreter&& interpreter) noexcept = delete;
 		~Interpreter() = default;
@@ -27,8 +28,9 @@ namespace LibLow
 
 	public:
 		void Reset();
-	
+
 	private:
+		Script::Ptr Script_;
 		std::vector<Variable::Ptr> Variables_;
 	};
 }
