@@ -31,7 +31,6 @@ namespace LibLow
 
 	public:
 		void Reset();
-		void Run();
 
 	private:
 

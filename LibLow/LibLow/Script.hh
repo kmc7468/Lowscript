@@ -26,12 +26,16 @@ namespace LibLow
 		Script& operator=(Script&& script) noexcept = delete;
 		bool operator==(const Script& script) const noexcept = delete;
 		bool operator!=(const Script& script) const noexcept = delete;
+		Script& operator+=(const Command& command) noexcept;
 
 	public:
 		static Ptr Create();
 
 	public:
 		void Reset();
+
+		void AddCommand(const Command& command);
+		void AddCommand(Command&& command) noexcept;
 
 	private:
 		std::vector<Command> Commands_;

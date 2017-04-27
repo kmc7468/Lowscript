@@ -13,21 +13,6 @@ namespace LibLow
 		return std::make_shared<Interpreter>(script);
 	}
 
-	void Interpreter::Run()
-	{
-		for (const Command& cmd : Script_->Commands_)
-		{
-			switch (cmd.CmdType())
-			{
-			case Command::Nop:
-				break;
-
-			default:
-				break; // TODO 
-			}
-		}
-	}
-
 	void Interpreter::Reset()
 	{
 		Variables_.clear();
