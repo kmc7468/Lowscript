@@ -10,13 +10,4 @@ namespace LibLow
 	{
 		Variables_.clear();
 	}
-
-	const Script::Ptr Interpreter::Script() const
-	{
-		return Script_;
-	}
-	Script::Ptr Interpreter::Script()
-	{
-		return Script_;
-	}
 }
