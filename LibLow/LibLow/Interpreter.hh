@@ -27,7 +27,14 @@ namespace LibLow
 		bool operator!=(const Interpreter& interpreter) const noexcept = delete;
 
 	public:
+		static Ptr Create(const Script::Ptr& script);
+
+	public:
 		void Reset();
+		void Run();
+
+	private:
+
 
 	private:
 		Script::Ptr Script_;

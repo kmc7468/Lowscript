@@ -10,6 +10,8 @@ namespace LibLow
 {
 	class Script final
 	{
+		friend class Interpreter;
+
 	public:
 		using Ptr = std::shared_ptr<Script>;
 
@@ -24,6 +26,9 @@ namespace LibLow
 		Script& operator=(Script&& script) noexcept = delete;
 		bool operator==(const Script& script) const noexcept = delete;
 		bool operator!=(const Script& script) const noexcept = delete;
+
+	public:
+		static Ptr Create();
 
 	public:
 		void Reset();
