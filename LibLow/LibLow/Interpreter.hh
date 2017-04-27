@@ -5,6 +5,7 @@
 #include "Variable.hh"
 
 #include <memory>
+#include <stack>
 #include <vector>
 
 namespace LibLow
@@ -33,10 +34,8 @@ namespace LibLow
 		void Reset();
 
 	private:
-
-
-	private:
 		Script::Ptr Script_;
+		std::stack<Variable::Ptr> Stack_;
 		std::vector<Variable::Ptr> Variables_;
 	};
 }

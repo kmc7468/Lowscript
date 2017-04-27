@@ -15,6 +15,10 @@ namespace LibLow
 
 	void Interpreter::Reset()
 	{
+		while (!Stack_.empty())
+		{
+			Stack_.pop();
+		}
 		Variables_.clear();
 	}
 }
