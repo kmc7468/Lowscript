@@ -25,6 +25,9 @@
     <ClInclude Include="LibLow\Types\Int.hh">
       <Filter>Header-Files\Types</Filter>
     </ClInclude>
+    <ClInclude Include="LibLow\Types\Double.hh">
+      <Filter>Header-Files\Types</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Command.cc">
@@ -34,6 +37,9 @@
       <Filter>Source-Files</Filter>
     </ClCompile>
     <ClCompile Include="Types\Int.cc">
+      <Filter>Source-Files\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="Types\Double.cc">
       <Filter>Source-Files\Types</Filter>
     </ClCompile>
   </ItemGroup>
