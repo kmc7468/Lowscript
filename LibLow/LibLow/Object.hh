@@ -9,6 +9,7 @@ namespace LibLow
 	enum class Type
 	{
 		Void,
+		Bool,
 		Int,
 		Double,
 	};
@@ -16,6 +17,7 @@ namespace LibLow
 	constexpr std::size_t TypeSize[] =
 	{
 		0, // Void
+		1, // Bool
 		4, // Int
 		8, // Double
 	};
@@ -43,6 +45,12 @@ namespace LibLow
 		Object() = default;
 		Object(const Object& object) = delete;
 		Object(Object&& object) noexcept = delete;
+
+	public:
+		Object& operator=(const Object& object) = delete;
+		Object& operator=(Object&& object) noexcept = delete;
+		bool operator==(const Object& object) const noexcept = delete;
+		bool operator!=(const Object& object) const noexcept = delete;
 
 	public:
 		virtual Type Type() const noexcept = 0;

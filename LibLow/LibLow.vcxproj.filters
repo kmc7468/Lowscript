@@ -7,6 +7,12 @@
     <Filter Include="Source-Files">
       <UniqueIdentifier>{1ab6c010-79c6-43c8-86a3-561a4b523e60}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header-Files\Types">
+      <UniqueIdentifier>{b869a6d7-601c-4eb5-859f-a85d88573057}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source-Files\Types">
+      <UniqueIdentifier>{7d7f064d-62f0-4314-95cd-469dd694f072}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LibLow.hh" />
@@ -16,6 +22,9 @@
     <ClInclude Include="LibLow\Object.hh">
       <Filter>Header-Files</Filter>
     </ClInclude>
+    <ClInclude Include="LibLow\Types\Int.hh">
+      <Filter>Header-Files\Types</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Command.cc">
@@ -23,6 +32,9 @@
     </ClCompile>
     <ClCompile Include="Object.cc">
       <Filter>Source-Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Types\Int.cc">
+      <Filter>Source-Files\Types</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

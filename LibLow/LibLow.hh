@@ -9,6 +9,8 @@
 #include "LibLow/Command.hh"
 #include "LibLow/Object.hh"
 
+#include "LibLow/Types/Int.hh"
+
 #ifdef LIBLOW_SHORT_NAMESPACE
 namespace LL = LibLow;
 #endif
