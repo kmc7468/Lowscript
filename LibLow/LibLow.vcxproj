@@ -122,12 +122,14 @@
     <ClInclude Include="LibLow.hh" />
     <ClInclude Include="LibLow\Command.hh" />
     <ClInclude Include="LibLow\Object.hh" />
+    <ClInclude Include="LibLow\Types\Bool.hh" />
     <ClInclude Include="LibLow\Types\Double.hh" />
     <ClInclude Include="LibLow\Types\Int.hh" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Command.cc" />
     <ClCompile Include="Object.cc" />
+    <ClCompile Include="Types\Bool.cc" />
     <ClCompile Include="Types\Double.cc" />
     <ClCompile Include="Types\Int.cc" />
   </ItemGroup>
