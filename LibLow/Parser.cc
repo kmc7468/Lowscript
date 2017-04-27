@@ -4,6 +4,7 @@
 
 #include <algorithm>
 #include <cctype>
+#include <cstddef>
 #include <cstdint>
 
 namespace LibLow
@@ -21,7 +22,7 @@ namespace LibLow
 
 		if (line.length() == 0)
 			throw "The length of the line cannot be zero.";
-		
+
 		std::string line_lower = line;
 		std::transform(line_lower.begin(), line_lower.end(), line_lower.begin(), tolower);
 
@@ -33,33 +34,23 @@ namespace LibLow
 
 			return Command(Command::Nop, {});
 		}
-		
+
 		Command::Type cmd_type;
 		std::uint8_t cmd_len = 0;
 
-		if (line_lower.find("var") == 0)
+		for (std::size_t i = 0; i < sizeof(Command::TypeString) / sizeof(void*); ++i)
 		{
-			cmd_type = Command::Var;
-			cmd_len = 3;
+			if (line_lower.find(Command::TypeString[i]) == 0)
+			{
+				cmd_type = static_cast<Command::Type>(i);
+				cmd_len = Command::TypeLength[i];
+				goto argument;
+			}
 		}
-		else if (line_lower.find("con") == 0)
-		{
-			cmd_type = Command::Con;
-			cmd_len = 3;
-		}
-		else if (line_lower.find("push") == 0)
-		{
-			cmd_type = Command::Push;
-			cmd_len = 4;
-		}
-		else if (line_lower.find("pop") == 0)
-		{
-			cmd_type = Command::Pop;
-			cmd_len = 3;
-		}
-		else
-			throw "Unknown command.";
-	
+
+		throw "Unknown command.";
+
+	argument:
 		std::vector<std::string> arguments;
 
 		if (line.length() == cmd_len)

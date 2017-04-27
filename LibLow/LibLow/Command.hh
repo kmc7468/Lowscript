@@ -57,6 +57,24 @@ namespace LibLow
 		Type CmdType() const;
 		const std::vector<std::string>& Arguments() const;
 
+	public:
+		static constexpr const char* const TypeString[] =
+		{
+			"nop",
+			"var",
+			"con",
+			"push",
+			"pop",
+		};
+		static constexpr const std::size_t TypeLength[] =
+		{
+			3, // nop
+			3, // var
+			3, // con
+			4, // push
+			3, // pop
+		};
+
 	private:
 		Type Type_;
 		std::vector<std::string> Arguments_;
