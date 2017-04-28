@@ -119,4 +119,9 @@ namespace LibLow
 
 		return commands;
 	}
+
+	Command operator""_c(const char* line, std::size_t length)
+	{
+		return Parser::ParseLine(std::string(line, length));
+	}
 }
