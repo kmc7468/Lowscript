@@ -2,16 +2,17 @@
 #define LIBLOW_HEADER_SCRIPT_HH
 
 #include "Command.hh"
+#include "Object.hh"
+#include "Variable.hh"
 
 #include <memory>
+#include <stack>
 #include <vector>
 
 namespace LibLow
 {
 	class Script final
 	{
-		friend class Interpreter;
-
 	public:
 		using Ptr = std::shared_ptr<Script>;
 
@@ -33,12 +34,17 @@ namespace LibLow
 
 	public:
 		void Reset();
+		void ResetCommand();
+		void ResetVariable();
 
 		void AddCommand(const Command& command);
 		void AddCommand(Command&& command) noexcept;
 
 	private:
 		std::vector<Command> Commands_;
+	
+		std::stack<Object::Ptr> Stack_;
+		std::vector<Variable::Ptr> Variables_;
 	};
 }
 

@@ -24,7 +24,20 @@ namespace LibLow
 
 	void Script::Reset()
 	{
+		ResetCommand();
+		ResetVariable();
+	}
+	void Script::ResetCommand()
+	{
 		Commands_.clear();
+	}
+	void Script::ResetVariable()
+	{
+		while (!Stack_.empty())
+		{
+			Stack_.pop();
+		}
+		Variables_.clear();
 	}
 
 	void Script::AddCommand(const Command& command)
