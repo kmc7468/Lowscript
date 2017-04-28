@@ -1,7 +1,9 @@
 #ifndef LIBLOW_HEADER_PARSER_HH
 #define LIBLOW_HEADER_PARSER_HH
 
+#include <cstddef>
 #include <string>
+#include <vector>
 
 namespace LibLow
 {
@@ -23,6 +25,7 @@ namespace LibLow
 
 	public:
 		static Command ParseLine(std::string line);
+		static std::vector<Command> ParseLines(const std::string& lines);
 	};
 }
 

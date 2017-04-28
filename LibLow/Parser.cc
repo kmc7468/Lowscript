@@ -4,8 +4,10 @@
 
 #include <algorithm>
 #include <cctype>
-#include <cstddef>
 #include <cstdint>
+#include <iterator>
+#include <sstream>
+#include <utility>
 
 namespace LibLow
 {
@@ -99,5 +101,22 @@ namespace LibLow
 			throw "The argument to the command is invalid.";
 
 		return Command(cmd_type, arguments);
+	}
+	std::vector<Command> Parser::ParseLines(const std::string& lines)
+	{
+		std::vector<Command> commands;
+
+		std::vector<std::string> line_parse
+		{
+			std::istream_iterator<std::string>(std::istringstream(lines)),
+			std::istream_iterator<std::string>()
+		};
+
+		for (const std::string& line : line_parse)
+		{
+			commands.push_back(ParseLine(line));
+		}
+
+		return commands;
 	}
 }
