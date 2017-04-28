@@ -15,7 +15,6 @@ namespace LibLow
 			Nop,
 
 			Var,
-			Con,
 			Push,
 			Pop,
 
@@ -47,7 +46,6 @@ namespace LibLow
 				return 1;
 
 			case Var:
-			case Con:
 			case Mov:
 				return 2;
 
@@ -65,7 +63,6 @@ namespace LibLow
 		{
 			"nop",
 			"var",
-			"con",
 			"push",
 			"pop",
 			"mov",
@@ -74,7 +71,6 @@ namespace LibLow
 		{
 			3, // nop
 			3, // var
-			3, // con
 			4, // push
 			3, // pop
 			3, // mov
