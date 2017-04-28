@@ -16,6 +16,11 @@ namespace LibLow
 		AddCommand(command);
 		return *this;
 	}
+	Script& Script::operator+=(const std::vector<Command>& commands)
+	{
+		AddCommands(commands);
+		return *this;
+	}
 
 	Script::Ptr Script::Create()
 	{
@@ -24,14 +29,11 @@ namespace LibLow
 
 	void Script::Reset()
 	{
-		ResetCommand();
-		ResetVariable();
-	}
-	void Script::ResetCommand()
-	{
 		Commands_.clear();
+
+		ResetVariables();
 	}
-	void Script::ResetVariable()
+	void Script::ResetVariables()
 	{
 		while (!Stack_.empty())
 		{
@@ -47,5 +49,12 @@ namespace LibLow
 	void Script::AddCommand(Command&& command) noexcept
 	{
 		Commands_.push_back(std::move(command));
+	}
+	void Script::AddCommands(const std::vector<Command>& commands)
+	{
+		for (const Command& command : commands)
+		{
+			AddCommand(command);
+		}
 	}
 }
