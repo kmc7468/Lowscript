@@ -119,6 +119,18 @@ namespace LibLow
 
 		return commands;
 	}
+	bool Parser::InvalidSyntax(const Command& command)
+	{
+		if (command.CmdType() < 0 ||
+			command.CmdType() > sizeof(Command::TypeLength) / sizeof(std::size_t))
+		{
+			return false;
+		}
+
+		// TODO: Argument Length
+
+		return true;
+	}
 
 	Command operator""_c(const char* line, std::size_t length)
 	{

@@ -26,6 +26,7 @@ namespace LibLow
 	public:
 		static Command ParseLine(std::string line);
 		static std::vector<Command> ParseLines(const std::string& lines);
+		static bool InvalidSyntax(const Command& command);
 	};
 
 	Command operator""_c(const char* line, std::size_t length);
