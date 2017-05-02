@@ -12,5 +12,15 @@ namespace LibLow
 		R("rbx");
 		R("rcx");
 		R("rdx");
+
+		R("eax");
+		R("ebx");
+		R("ecx");
+		R("edx");
+	}
+
+	void Interpreter::Run(const Command& command)
+	{
+		
 	}
 }

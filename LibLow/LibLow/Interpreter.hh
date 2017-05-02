@@ -1,6 +1,7 @@
 #ifndef LIBLOW_HEADER_INTERPRETER_HH
 #define LIBLOW_HEADER_INTERPRETER_HH
 
+#include "Command.hh"
 #include "Object.hh"
 #include "Variable.hh"
 
@@ -24,6 +25,9 @@ namespace LibLow
 		Interpreter& operator=(Interpreter&& interpreter) noexcept = delete;
 		bool operator==(const Interpreter& interpreter) const noexcept = delete;
 		bool operator!=(const Interpreter& interpreter) const noexcept = delete;
+
+	public:
+		void Run(const Command& command);
 
 	private:
 		std::map<std::string, Object::Ptr> Registers_;
