@@ -55,6 +55,25 @@ namespace LibLow
 		return !(*this == command);
 	}
 
+	std::string Command::ToString() const
+	{
+		std::string str = TypeString[Type_];
+		str += ' ';
+
+		for (const std::string& arg : Arguments_)
+		{
+			str += arg;
+			str += ',';
+		}
+
+		if (str.back() == ',')
+		{
+			str = str.substr(0, str.length() - 1);
+		}
+
+		return str;
+	}
+
 	Command::Type Command::CmdType() const
 	{
 		return Type_;

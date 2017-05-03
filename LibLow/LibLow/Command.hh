@@ -55,6 +55,9 @@ namespace LibLow
 		}
 
 	public:
+		std::string ToString() const;
+
+	public:
 		Type CmdType() const;
 		const std::vector<std::string>& Arguments() const;
 
